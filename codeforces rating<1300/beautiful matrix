@@ -1,0 +1,24 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+int main() {
+    // read the input matrix
+    int matrix[5][5];
+    pair<int, int> position_one;
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            cin >> matrix[i][j];
+            if (matrix[i][j] == 1) {
+                position_one.first = i;
+                position_one.second = j;
+            }
+        }
+    }
+
+    int min_moves = abs(position_one.first - 2) + abs(position_one.second - 2);
+
+    cout << min_moves << endl;
+    return 0;
+}
